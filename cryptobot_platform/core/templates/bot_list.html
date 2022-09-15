@@ -4,5 +4,10 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-hi
+<p>
+{% for bot in bots %}
+<h2>BOT {{bot.id}}</h2>
+<p>{{bot.get_run_status_display }}</p>
+{% endfor %}
+</p>
 {% endblock %}
