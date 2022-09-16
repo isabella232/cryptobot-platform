@@ -6,8 +6,11 @@
 {% block content %}
 <p>
 {% for bot in bots %}
-<h2>BOT {{bot.id}}</h2>
-<p>{{bot.get_run_status_display }}</p>
+<p>BOT: {{bot.id}}</p>
+<p>CONTAINER: {{bot.container_id}}</p>
+<p>last known status: {{bot.status}}</p>
+<a href="/start-bot/{{bot.id}}">start container</a><br>
+<a href="/stop-bot/{{bot.id}}">stop container</a>
 {% endfor %}
 </p>
 {% endblock %}

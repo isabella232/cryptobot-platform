@@ -1,6 +1,6 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import CryptoBot
+from .models import Bot
 
-admin.site.register(CryptoBot)
+admin.site.register(Bot)

@@ -16,9 +16,11 @@
   <a href="{% url 'login' %}">Log In</a>
   {% endif %}
   <ul>
-    <li><a href="create-bot">Create bot</li>
-    <li><a href="bot-list">My bots</a></li>
+    <li><a href="/create-bot">Create bot</li>
+    <li><a href="/bot-list">My bots</a></li>
+
   </ul>
+  <hr><hr>
   <main>
     {% block content %}
     {% endblock %}
