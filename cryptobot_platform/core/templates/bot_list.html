@@ -10,6 +10,9 @@
         <th>Container ID</th>
         <th>Status</th>
         <th>Actions</th>
+        <th>Script</th>
+        <th>Scheduling</th>
+        <th>Logs</th>
     </tr>
     {% for bot in bots %}
     <tr>
@@ -20,6 +23,13 @@
             <a href="/start-bot/{{bot.id}}">start container</a><br>
             <a href="/stop-bot/{{bot.id}}">stop container</a>
         </td>
+        <td>
+            <form>
+                <input type="file"></input><br><br>
+                <input type="submit" value="Update script"></input>
+            </form>
+        </td>
+        
     </tr>
 
     {% endfor %}
