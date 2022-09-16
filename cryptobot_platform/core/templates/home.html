@@ -4,5 +4,9 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
-hi
+{% if user.is_authenticated %}
+<h3>Welcome, {{user.username}}</h3>
+{% else %}
+<h3>Please log in to continue</h3>
+{% endif %}
 {% endblock %}

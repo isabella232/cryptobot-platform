@@ -3,30 +3,43 @@
 <html>
 
 <head>
+  <style>
+    th {
+      background-color: gainsboro;
+    }
+
+    th,
+    td {
+      padding: 15px;
+      text-align: left;
+      border: 1px solid #000;
+    }
+  </style>
   <meta charset="utf-8">
   <title>{% block title %}Cryptobot{% endblock %}</title>
 </head>
 
 <body>
-  {% if user.is_authenticated %}
-  Hi {{ user.username }}!
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
-  {% else %}
-  <p>You are not logged in</p>
-  <a href="{% url 'login' %}">Log In</a>
-  {% endif %}
-  <ul>
-    <li><a href="/create-bot">Create bot</li>
-    <li><a href="/bot-list">My bots</a></li>
-
-  </ul>
-  <hr><hr>
+  <header>
+    <ul>
+      {% if user.is_authenticated %}
+      <li><a href="/">Home</a></li>
+      <li><a href="/create-bot">Create bot</li>
+      <li><a href="/bot-list">My bots</a></li>
+      <li><a href="{% url 'logout' %}">Log Out</a></li>
+      {% else %}
+      <li><a href="{% url 'login' %}">Log In</a></li>
+      {% endif %}
+    </ul>
+    <hr>
+    <hr>
+  </header>
   <main>
     {% block content %}
     {% endblock %}
   </main>
 
-  
+
 </body>
 
 </html>
